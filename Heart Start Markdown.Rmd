@@ -16,9 +16,25 @@ x                            # display x
 
 ```
 
+Model name: 
+           x11   x12   x13   x21   x22   x23         
+Minimize   622   614   630   641   645   649         
+R1           1     1     1     0     0     0  <=  100
+R2           0     0     0     1     1     1  <=  120
+R3           1     0     0     1     0     0  >=   80
+R4           0     1     0     0     1     0  >=   60
+R5           0     0     1     0     0     1  >=   70
+Kind       Std   Std   Std   Std   Std   Std         
+Type      Real  Real  Real  Real  Real  Real         
+Upper      Inf   Inf   Inf   Inf   Inf   Inf         
+Lower        0     0     0     0     0     0   
 ```{r}
 solve(x)
 get.objective(x)   # get objective value
 get.variables(x)   # get values of decision variables
 get.constraints(x) # get constraint of RHS values
 ```
+[1] 0
+[1] 132790
+[1]  0 60 40 80  0 30
+[1] 100 110  80  60  70
