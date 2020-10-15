@@ -1,0 +1,24 @@
+---
+title: "Heart Start"
+output: html_document
+---
+
+```{r}
+library(lpSolveAPI)
+
+```
+
+
+```{r}
+x <-  read.lp("Heart Start.lp")  # create an lp object x
+
+x                            # display x
+
+```
+
+```{r}
+solve(x)
+get.objective(x)   # get objective value
+get.variables(x)   # get values of decision variables
+get.constraints(x) # get constraint of RHS values
+```
